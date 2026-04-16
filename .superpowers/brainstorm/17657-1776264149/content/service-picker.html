@@ -1,0 +1,75 @@
+<h2>Service Picker — Scroll Mechanic</h2>
+<p class="subtitle">As the user scrolls through a tall sticky section, the active service card transitions in/out over the video background. Here's the layout at each scroll position.</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">Scroll position 1 of 3 — AI Automation card active</div>
+    <div class="mockup-body" style="background:#0A0A0F;padding:0;overflow:hidden;border-radius:8px;position:relative;min-height:340px;">
+      <!-- Video bg simulation -->
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0A0A0F 0%,#12121A 40%,#0d1520 100%);opacity:0.9;"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:32px 40px;gap:24px;">
+        <!-- Left: video label -->
+        <div style="color:#A1A1B5;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #2A2A38;border-radius:6px;padding:8px 14px;backdrop-filter:blur(4px);">
+          ▶ optimalisai.mp4 playing
+        </div>
+        <!-- Center: active card -->
+        <div style="flex:1;max-width:420px;background:rgba(18,18,26,0.85);border:1px solid #1E73E8;border-radius:16px;padding:28px;box-shadow:0 0 40px rgba(30,115,232,0.18);backdrop-filter:blur(12px);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#1E73E8,#22D3EE);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;">⚡</div>
+            <span style="color:#F4F4F8;font-weight:700;font-size:18px;">AI Automation</span>
+          </div>
+          <p style="color:#A1A1B5;font-size:14px;line-height:1.6;margin:0 0 18px;">Stop doing repetitive admin. We build automations that handle bookings, follow-ups, and lead capture — so you focus on customers.</p>
+          <a style="display:inline-flex;align-items:center;gap:6px;color:#22D3EE;font-size:13px;font-weight:600;text-decoration:none;">Find out more →</a>
+        </div>
+        <!-- Right: scroll progress indicator -->
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="width:4px;height:32px;background:#1E73E8;border-radius:4px;"></div>
+          <div style="width:4px;height:32px;background:#2A2A38;border-radius:4px;"></div>
+          <div style="width:4px;height:32px;background:#2A2A38;border-radius:4px;"></div>
+        </div>
+      </div>
+      <!-- Bottom: dots -->
+      <div style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;">
+        <div style="width:20px;height:3px;background:#1E73E8;border-radius:2px;"></div>
+        <div style="width:8px;height:3px;background:#2A2A38;border-radius:2px;"></div>
+        <div style="width:8px;height:3px;background:#2A2A38;border-radius:2px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">Scroll position 2 of 3 — Website Builders card (card slides in, replaces previous)</div>
+    <div class="mockup-body" style="background:#0A0A0F;padding:0;overflow:hidden;border-radius:8px;position:relative;min-height:340px;">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0A0A0F 0%,#12121A 40%,#0d1520 100%);opacity:0.9;"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:32px 40px;gap:24px;">
+        <div style="color:#A1A1B5;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #2A2A38;border-radius:6px;padding:8px 14px;backdrop-filter:blur(4px);">
+          ▶ optimalisai.mp4 playing
+        </div>
+        <div style="flex:1;max-width:420px;background:rgba(18,18,26,0.85);border:1px solid #1E73E8;border-radius:16px;padding:28px;box-shadow:0 0 40px rgba(30,115,232,0.18);backdrop-filter:blur(12px);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#1E73E8,#22D3EE);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;">🌐</div>
+            <span style="color:#F4F4F8;font-weight:700;font-size:18px;">Website Builders</span>
+          </div>
+          <p style="color:#A1A1B5;font-size:14px;line-height:1.6;margin:0 0 18px;">Fast, mobile-first, SEO-ready websites built with modern tools and tuned for the businesses you actually want walking through your door.</p>
+          <a style="display:inline-flex;align-items:center;gap:6px;color:#22D3EE;font-size:13px;font-weight:600;text-decoration:none;">Find out more →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="width:4px;height:32px;background:#2A2A38;border-radius:4px;"></div>
+          <div style="width:4px;height:32px;background:#1E73E8;border-radius:4px;"></div>
+          <div style="width:4px;height:32px;background:#2A2A38;border-radius:4px;"></div>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;">
+        <div style="width:8px;height:3px;background:#2A2A38;border-radius:2px;"></div>
+        <div style="width:20px;height:3px;background:#1E73E8;border-radius:2px;"></div>
+        <div style="width:8px;height:3px;background:#2A2A38;border-radius:2px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="subtitle"><strong>How it works technically:</strong> A tall scroll container (300vh) with a sticky inner frame. As scroll progress moves from 0→33%→66%→100%, Framer Motion animates the card out (fade + slide up) and the next one in (fade + slide up from below). The video plays continuously in the background throughout.</p>
+</div>
