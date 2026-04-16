@@ -1,12 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import {
-  motion,
-  useReducedMotion,
-} from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ChevronDown, Workflow, Globe, BotMessageSquare } from "lucide-react";
 
 const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackground"), {
@@ -29,7 +25,7 @@ const services = [
     icon: Globe,
     title: "Website Builders",
     pitch:
-      "Fast, mobile-first, SEO-ready websites built with modern tools and tuned for the businesses you actually want walking through your door.",
+      "Fast, mobile-first, SEO-ready websites built in days and tuned for the customers you want.",
     href: "/services/website-builders",
     tag: "Launch in days",
     number: "02",
@@ -39,7 +35,7 @@ const services = [
     icon: BotMessageSquare,
     title: "Chatbots",
     pitch:
-      "Smart, branded chatbots that handle bookings, FAQs, and lead qualification on your website, WhatsApp, or Instagram — even at 2am.",
+      "Smart chatbots on your website, WhatsApp, or Instagram — handling bookings and leads even at 2am.",
     href: "/services/chatbots",
     tag: "24/7 availability",
     number: "03",
@@ -54,26 +50,21 @@ export default function HeroAndServices() {
   };
 
   const handleExploreServices = () => {
-    const el = document.getElementById("services");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────────── */}
+      {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative h-screen overflow-hidden flex items-center justify-center">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/optimalisai.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
+          autoPlay loop muted playsInline
           preload="metadata"
           poster="/og-image.png"
           aria-hidden="true"
         />
-
         <div className="absolute inset-0 bg-background/65" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background" />
 
@@ -155,14 +146,13 @@ export default function HeroAndServices() {
         )}
       </section>
 
-      {/* ── SERVICES ─────────────────────────────────────────── */}
+      {/* ── SERVICES ──────────────────────────────────────────── */}
       <section id="services" className="section-padding bg-background relative overflow-hidden">
-        {/* Subtle background glow */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30,115,232,0.07) 0%, transparent 70%)",
+              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30,115,232,0.08) 0%, transparent 70%)",
           }}
         />
 
@@ -173,7 +163,7 @@ export default function HeroAndServices() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center mb-14"
+            className="text-center mb-12 lg:mb-16"
           >
             <p className="text-xs uppercase tracking-widest text-text-muted/60 mb-3">
               What we do
@@ -183,8 +173,8 @@ export default function HeroAndServices() {
             </h2>
           </motion.div>
 
-          {/* Cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* ── Mobile: 3 stacked cards ── */}
+          <div className="flex flex-col gap-5 md:hidden">
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
@@ -193,93 +183,217 @@ export default function HeroAndServices() {
                   initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{
-                    duration: 0.55,
-                    delay: i * 0.12,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  whileHover={
-                    prefersReducedMotion
-                      ? undefined
-                      : { y: -6, boxShadow: "0 0 60px rgba(34,211,238,0.18)" }
-                  }
-                  className="relative flex flex-col rounded-3xl overflow-hidden cursor-default"
+                  transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative rounded-3xl overflow-hidden"
                   style={{
                     background: "rgba(18,18,26,0.9)",
                     border: "1px solid rgba(30,115,232,0.22)",
-                    boxShadow: "0 0 40px rgba(30,115,232,0.06)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
                   }}
                 >
-                  {/* Top accent bar */}
-                  <div
-                    className="h-[3px] w-full shrink-0"
-                    style={{
-                      background: "linear-gradient(90deg, #1E73E8, #22D3EE)",
-                    }}
-                  />
-
-                  <div className="flex flex-col flex-1 p-7 sm:p-8">
-                    {/* Number + Icon row */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div
-                        className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-                        style={{
-                          background: "linear-gradient(135deg, #1E73E8 0%, #22D3EE 100%)",
-                          boxShadow: "0 0 24px rgba(30,115,232,0.4)",
-                        }}
-                      >
-                        <Icon size={24} className="text-white" />
+                  <div className="h-[3px]" style={{ background: "linear-gradient(90deg,#1E73E8,#22D3EE)" }} />
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-5">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+                          style={{ background: "linear-gradient(135deg,#1E73E8,#22D3EE)", boxShadow: "0 0 20px rgba(30,115,232,0.35)" }}
+                        >
+                          <Icon size={24} className="text-white" />
+                        </div>
+                        <div>
+                          <span className="block text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#22D3EE" }}>{service.tag}</span>
+                          <h3 className="font-display font-bold text-xl text-white leading-tight">{service.title}</h3>
+                        </div>
                       </div>
-                      <span
-                        className="text-4xl font-bold tabular-nums leading-none"
-                        style={{ color: "rgba(30,115,232,0.18)" }}
-                      >
-                        {service.number}
-                      </span>
+                      <span className="text-3xl font-bold tabular-nums shrink-0 ml-2" style={{ color: "rgba(30,115,232,0.18)" }}>{service.number}</span>
                     </div>
-
-                    {/* Tag + title */}
-                    <div className="mb-4">
-                      <span
-                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-3"
-                        style={{
-                          background: "rgba(30,115,232,0.12)",
-                          border: "1px solid rgba(30,115,232,0.3)",
-                          color: "#22D3EE",
-                        }}
-                      >
-                        {service.tag}
-                      </span>
-                      <h3 className="font-display font-bold text-xl sm:text-2xl text-text-primary leading-tight">
-                        {service.title}
-                      </h3>
-                    </div>
-
-                    {/* Pitch */}
-                    <p
-                      className="text-sm sm:text-base leading-relaxed flex-1 mb-7"
-                      style={{ color: "rgba(180,180,205,0.85)" }}
-                    >
-                      {service.pitch}
-                    </p>
-
-                    {/* CTA */}
-                    <Link
-                      href={service.href}
-                      className="inline-flex items-center gap-2 text-sm font-semibold group w-fit"
-                      style={{ color: "#22D3EE" }}
-                    >
+                    <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(180,180,200,0.85)" }}>{service.pitch}</p>
+                    <Link href={service.href} className="inline-flex items-center gap-2 text-sm font-semibold group" style={{ color: "#22D3EE" }}>
                       Find out more
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform duration-200 group-hover:translate-x-1"
-                      />
+                      <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </motion.div>
               );
             })}
+          </div>
+
+          {/* ── Desktop: bento grid ── */}
+          {/* Layout:
+               [  AI Automation (large, left)  ] [ Website Builders (top-right)  ]
+               [  AI Automation (large, left)  ] [ Chatbots (bottom-right)       ]
+          */}
+          <div className="hidden md:grid grid-cols-3 grid-rows-2 gap-5 h-[680px]">
+
+            {/* AI Automation — spans 2 cols × 2 rows */}
+            <motion.div
+              initial={prefersReducedMotion ? false : { opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={prefersReducedMotion ? undefined : { y: -4, boxShadow: "0 0 80px rgba(34,211,238,0.18)" }}
+              className="col-span-2 row-span-2 relative rounded-3xl overflow-hidden flex flex-col"
+              style={{
+                background: "linear-gradient(145deg, rgba(18,18,30,0.97) 0%, rgba(14,14,22,0.97) 100%)",
+                border: "1px solid rgba(30,115,232,0.3)",
+                boxShadow: "0 0 60px rgba(30,115,232,0.1)",
+                transition: "box-shadow 0.4s ease, transform 0.4s ease",
+              }}
+            >
+              {/* Inner glow */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse 70% 50% at 30% 60%, rgba(30,115,232,0.1) 0%, transparent 70%)",
+                }}
+              />
+              {/* Top accent */}
+              <div className="h-[3px] shrink-0" style={{ background: "linear-gradient(90deg,#1E73E8,#22D3EE)" }} />
+
+              <div className="relative z-10 flex flex-col flex-1 p-10 xl:p-12">
+                {/* Number */}
+                <span
+                  className="text-8xl font-bold tabular-nums leading-none mb-auto self-end opacity-[0.07]"
+                  style={{ color: "#22D3EE" }}
+                >
+                  01
+                </span>
+
+                <div className="mt-auto">
+                  {/* Icon */}
+                  <div
+                    className="w-20 h-20 rounded-3xl flex items-center justify-center mb-8"
+                    style={{
+                      background: "linear-gradient(135deg,#1E73E8,#22D3EE)",
+                      boxShadow: "0 0 40px rgba(30,115,232,0.5)",
+                    }}
+                  >
+                    <Workflow size={36} className="text-white" />
+                  </div>
+
+                  {/* Tag */}
+                  <span
+                    className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold mb-4"
+                    style={{
+                      background: "rgba(30,115,232,0.15)",
+                      border: "1px solid rgba(30,115,232,0.35)",
+                      color: "#22D3EE",
+                    }}
+                  >
+                    Save 20+ hrs/week
+                  </span>
+
+                  <h3 className="font-display font-bold text-4xl xl:text-5xl text-white leading-tight mb-5">
+                    AI Automation
+                  </h3>
+                  <p className="text-base xl:text-lg leading-relaxed mb-8 max-w-md" style={{ color: "rgba(180,180,210,0.85)" }}>
+                    Stop doing repetitive admin. We build automations that handle bookings,
+                    follow-ups, and lead capture — so you focus on customers.
+                  </p>
+
+                  <Link
+                    href="/services/ai-automation"
+                    className="inline-flex items-center gap-3 px-7 py-3.5 rounded-2xl font-semibold text-white text-sm group"
+                    style={{
+                      background: "linear-gradient(135deg,#1E73E8,#22D3EE)",
+                      boxShadow: "0 0 24px rgba(30,115,232,0.4)",
+                    }}
+                  >
+                    Find out more
+                    <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Website Builders — col 3, row 1 */}
+            <motion.div
+              initial={prefersReducedMotion ? false : { opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={prefersReducedMotion ? undefined : { y: -4, boxShadow: "0 0 60px rgba(34,211,238,0.16)" }}
+              className="col-span-1 row-span-1 relative rounded-3xl overflow-hidden flex flex-col"
+              style={{
+                background: "rgba(18,18,26,0.95)",
+                border: "1px solid rgba(30,115,232,0.22)",
+                transition: "box-shadow 0.4s ease, transform 0.4s ease",
+              }}
+            >
+              <div className="h-[3px]" style={{ background: "linear-gradient(90deg,#1E73E8,#22D3EE)" }} />
+              <div className="relative flex flex-col flex-1 p-7 xl:p-8">
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="w-13 h-13 w-[52px] h-[52px] rounded-2xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg,#1E73E8,#22D3EE)", boxShadow: "0 0 24px rgba(30,115,232,0.4)" }}
+                  >
+                    <Globe size={22} className="text-white" />
+                  </div>
+                  <span className="text-4xl font-bold opacity-[0.12]" style={{ color: "#22D3EE" }}>02</span>
+                </div>
+                <span
+                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-3 w-fit"
+                  style={{ background: "rgba(30,115,232,0.12)", border: "1px solid rgba(30,115,232,0.3)", color: "#22D3EE" }}
+                >
+                  Launch in days
+                </span>
+                <h3 className="font-display font-bold text-xl xl:text-2xl text-white mb-3 leading-tight">
+                  Website Builders
+                </h3>
+                <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(180,180,205,0.8)" }}>
+                  Fast, mobile-first, SEO-ready websites built in days and tuned for the customers you want.
+                </p>
+                <Link href="/services/website-builders" className="inline-flex items-center gap-2 text-sm font-semibold group w-fit" style={{ color: "#22D3EE" }}>
+                  Find out more
+                  <ArrowRight size={13} className="transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Chatbots — col 3, row 2 */}
+            <motion.div
+              initial={prefersReducedMotion ? false : { opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.65, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={prefersReducedMotion ? undefined : { y: -4, boxShadow: "0 0 60px rgba(34,211,238,0.16)" }}
+              className="col-span-1 row-span-1 relative rounded-3xl overflow-hidden flex flex-col"
+              style={{
+                background: "rgba(18,18,26,0.95)",
+                border: "1px solid rgba(30,115,232,0.22)",
+                transition: "box-shadow 0.4s ease, transform 0.4s ease",
+              }}
+            >
+              <div className="h-[3px]" style={{ background: "linear-gradient(90deg,#1E73E8,#22D3EE)" }} />
+              <div className="relative flex flex-col flex-1 p-7 xl:p-8">
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="w-[52px] h-[52px] rounded-2xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg,#1E73E8,#22D3EE)", boxShadow: "0 0 24px rgba(30,115,232,0.4)" }}
+                  >
+                    <BotMessageSquare size={22} className="text-white" />
+                  </div>
+                  <span className="text-4xl font-bold opacity-[0.12]" style={{ color: "#22D3EE" }}>03</span>
+                </div>
+                <span
+                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-3 w-fit"
+                  style={{ background: "rgba(30,115,232,0.12)", border: "1px solid rgba(30,115,232,0.3)", color: "#22D3EE" }}
+                >
+                  24/7 availability
+                </span>
+                <h3 className="font-display font-bold text-xl xl:text-2xl text-white mb-3 leading-tight">
+                  Chatbots
+                </h3>
+                <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(180,180,205,0.8)" }}>
+                  Smart chatbots on your website, WhatsApp, or Instagram — handling bookings and leads even at 2am.
+                </p>
+                <Link href="/services/chatbots" className="inline-flex items-center gap-2 text-sm font-semibold group w-fit" style={{ color: "#22D3EE" }}>
+                  Find out more
+                  <ArrowRight size={13} className="transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
