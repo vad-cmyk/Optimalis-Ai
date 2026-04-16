@@ -60,6 +60,18 @@ body::before {
 }
 
 @layer utilities {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
   .gradient-text {
     background: linear-gradient(135deg, #1E73E8 0%, #22D3EE 100%);
     -webkit-background-clip: text;
