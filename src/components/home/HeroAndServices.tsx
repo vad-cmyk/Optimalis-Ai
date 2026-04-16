@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ChevronDown, Workflow, Globe, BotMessageSquare } from "lucide-react";
 
 const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackground"), {
@@ -44,6 +45,16 @@ const services = [
 
 export default function HeroAndServices() {
   const prefersReducedMotion = useReducedMotion();
+  const heroRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Fade hero content out as it scrolls away — gone by 50% scroll
+  const heroContentOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
+  const heroContentY = useTransform(heroScroll, [0, 0.5], [0, -40]);
 
   const handleBookCall = () => {
     window.open("https://calendly.com/vad-optimalis/optimalis-ai-calendar", "_blank");
@@ -56,7 +67,7 @@ export default function HeroAndServices() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="relative h-screen overflow-hidden flex items-center justify-center">
+      <section ref={heroRef} className="relative h-screen overflow-hidden flex items-center justify-center">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/optimalisai.mp4"
@@ -74,7 +85,10 @@ export default function HeroAndServices() {
           </div>
         )}
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          style={prefersReducedMotion ? undefined : { opacity: heroContentOpacity, y: heroContentY }}
+        >
           <motion.div
             initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -126,7 +140,7 @@ export default function HeroAndServices() {
               Explore Services
             </button>
           </motion.div>
-        </div>
+        </motion.div>
 
         {!prefersReducedMotion && (
           <motion.div
@@ -134,6 +148,7 @@ export default function HeroAndServices() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+            style={{ opacity: heroContentOpacity }}
           >
             <span className="text-xs text-text-muted/50 tracking-widest uppercase">Scroll</span>
             <motion.div
