@@ -101,11 +101,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@optimalis-ai.com"
+                  href="mailto:vad@optimalis.ai"
                   className="flex items-center gap-2 text-sm text-text-muted hover:text-brand-cyan transition-colors duration-200"
                 >
                   <Mail size={14} className="shrink-0" />
-                  hello@optimalis-ai.com
+                  vad@optimalis.ai
                 </a>
               </li>
               <li>

@@ -6,7 +6,7 @@ export function localBusinessSchema() {
     description:
       "Norwich-based AI agency helping local businesses save time and win more customers with AI automation, custom websites, and chatbots.",
     url: "https://optimalis-ai.com",
-    email: "hello@optimalis-ai.com",
+    email: "vad@optimalis.ai",
     logo: "https://optimalis-ai.com/logo.png",
     image: "https://optimalis-ai.com/og-image.png",
     address: {
