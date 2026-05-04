@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HeroAndServices from "@/components/home/HeroAndServices";
 import WhySection from "@/components/home/WhySection";
+import PortfolioSection from "@/components/home/PortfolioSection";
 import StatsSection from "@/components/home/StatsSection";
 import ChatbotDemo from "@/components/home/ChatbotDemo";
 import HowItWorks from "@/components/home/HowItWorks";
@@ -31,6 +32,7 @@ export default function HomePage() {
       />
       <HeroAndServices />
       <WhySection />
+      <PortfolioSection />
       <StatsSection />
       <ChatbotDemo />
       <HowItWorks />

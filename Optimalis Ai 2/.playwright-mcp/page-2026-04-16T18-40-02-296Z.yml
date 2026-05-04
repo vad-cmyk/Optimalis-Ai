@@ -1,0 +1,210 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Optimalis AI" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Optimalis AI" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - button "Services" [ref=e11] [cursor=pointer]:
+          - text: Services
+          - img [ref=e12]
+        - link "Book a Call" [ref=e14] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Book Discovery Call" [ref=e16] [cursor=pointer]:
+        - /url: https://calendly.com/vad-optimalis/optimalis-ai-calendar
+        - text: Book Discovery Call
+        - img [ref=e17]
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e30]: Norwich-based AI agency for local businesses
+          - heading "Your business, optimised by AI." [level=1] [ref=e32]
+          - paragraph [ref=e33]: We build AI automations, smart websites, and chatbots that help Norwich businesses win back hours and convert more customers.
+          - generic [ref=e34]:
+            - button "Book a Free Discovery Call" [ref=e35] [cursor=pointer]:
+              - text: Book a Free Discovery Call
+              - img [ref=e36]
+            - button "Explore Services" [ref=e38] [cursor=pointer]
+        - generic [ref=e39]:
+          - generic [ref=e40]: Scroll
+          - img [ref=e42]
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - paragraph: What we do
+              - heading "Built to grow your business" [level=2]
+            - generic:
+              - button "AI Automation":
+                - img
+                - generic: AI Automation
+              - button "Website Builders":
+                - img
+                - generic: Website Builders
+              - button "Chatbots":
+                - img
+                - generic: Chatbots
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Save 20+ hrs/week
+                    - heading "AI Automation" [level=3]
+                - paragraph: Stop doing repetitive admin. We build automations that handle bookings, follow-ups, and lead capture — so you focus on customers.
+                - link "Find out more":
+                  - /url: /services/ai-automation
+                  - text: Find out more
+                  - img
+            - paragraph: Keep scrolling
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: Why choose us
+        - heading "Why Optimalis AI" [level=2] [ref=e48]
+      - generic [ref=e49]:
+        - generic [ref=e52]:
+          - img [ref=e54]
+          - heading "Built for local businesses" [level=3] [ref=e59]
+          - paragraph [ref=e60]: No corporate jargon, no bloated proposals. We understand the real problems facing salons, tradies, restaurants, and clinics — and we solve them.
+        - generic [ref=e63]:
+          - img [ref=e65]
+          - heading "Norwich-based, UK support" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Real humans, same time zone. We're right here in Norfolk, which means quick calls, local knowledge, and support you can actually reach.
+        - generic [ref=e72]:
+          - img [ref=e74]
+          - heading "Setup in days, not months" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Our streamlined process means you'll see results fast. Most clients are up and running within a week, with ROI from day one.
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - paragraph [ref=e81]: The impact
+        - heading "Real results, measurable gains" [level=2] [ref=e82]
+        - paragraph [ref=e83]: Based on client outcomes — your results may vary
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e87]: 20+ hrs
+          - generic [ref=e88]: Saved per week
+          - generic [ref=e89]: given back to business owners
+        - generic [ref=e90]:
+          - generic [ref=e92]: 3×
+          - generic [ref=e93]: Faster customer response
+          - generic [ref=e94]: vs manual handling
+        - generic [ref=e95]:
+          - generic [ref=e97]: 24/7
+          - generic [ref=e98]: AI availability
+          - generic [ref=e99]: working while you sleep
+        - generic [ref=e100]:
+          - generic [ref=e102]: 100%
+          - generic [ref=e103]: UK-based delivery
+          - generic [ref=e104]: Norwich-built, Norwich-proud
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: Live demo
+        - heading "Try it right now" [level=2] [ref=e110]
+        - paragraph [ref=e111]: This is a simplified preview of the kind of chatbot we can build for your business. Ask it about automation, websites, or chatbots — and imagine it trained on your own services, FAQs, and brand voice.
+        - list [ref=e112]:
+          - listitem [ref=e113]: Trained on your business info
+          - listitem [ref=e116]: Works on your website, WhatsApp & Instagram
+          - listitem [ref=e119]: Handles bookings, FAQs & lead capture
+          - listitem [ref=e122]: Hands off to a human when needed
+      - generic [ref=e125]:
+        - generic [ref=e126]:
+          - img [ref=e128]
+          - generic [ref=e131]:
+            - generic [ref=e132]: Optimalis Bot
+            - generic [ref=e133]: Online — ready to help
+        - generic [ref=e136]:
+          - img [ref=e138]
+          - generic [ref=e141]: Hi! I'm Optimalis — ask me what AI could do for your business. 👋
+        - generic [ref=e143]:
+          - textbox "Chat message" [ref=e144]:
+            - /placeholder: Ask about AI for your business...
+          - button "Send message" [disabled] [ref=e145]:
+            - img [ref=e146]
+    - generic [ref=e150]:
+      - generic [ref=e151]:
+        - paragraph [ref=e152]: The process
+        - heading "How it works" [level=2] [ref=e153]
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - img [ref=e159]
+          - generic [ref=e161]: "01"
+          - heading "Discovery Call" [level=3] [ref=e162]
+          - paragraph [ref=e163]: A free 30-minute chat to understand your business, your pain points, and where AI can make the biggest difference.
+        - generic [ref=e164]:
+          - img [ref=e166]
+          - generic [ref=e169]: "02"
+          - heading "Strategy & Quote" [level=3] [ref=e170]
+          - paragraph [ref=e171]: We map out exactly what we'll build, what it costs, and what results to expect — no fluff, just clarity.
+        - generic [ref=e172]:
+          - img [ref=e174]
+          - generic [ref=e178]: "03"
+          - heading "Build & Train" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Our team builds, tests, and trains your solution with your real business data. You're kept in the loop throughout.
+        - generic [ref=e181]:
+          - img [ref=e183]
+          - generic [ref=e188]: "04"
+          - heading "Launch & Support" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Go live with confidence. We handle the launch and provide ongoing support so things keep running smoothly.
+    - generic [ref=e192]:
+      - generic [ref=e193]:
+        - paragraph [ref=e194]: Get started today
+        - heading "Ready to optimise your business?" [level=2] [ref=e195]
+        - paragraph [ref=e196]: Book a free 30-minute discovery call. No pitch, just clarity. We'll tell you exactly what AI can and can't do for your business.
+      - iframe [ref=e202]:
+        
+      - link "Open Calendly in a new tab" [ref=e204] [cursor=pointer]:
+        - /url: https://calendly.com/vad-optimalis/optimalis-ai-calendar
+        - text: Open Calendly in a new tab
+        - img [ref=e205]
+  - contentinfo [ref=e209]:
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - link "Optimalis AI" [ref=e214] [cursor=pointer]:
+            - /url: /
+            - img "Optimalis AI" [ref=e216]
+          - paragraph [ref=e217]: Your business, optimised by AI.
+          - paragraph [ref=e218]: Helping Norwich businesses save time and win more customers.
+        - generic [ref=e219]:
+          - heading "Services" [level=3] [ref=e220]
+          - list [ref=e221]:
+            - listitem [ref=e222]:
+              - link "AI Automation" [ref=e223] [cursor=pointer]:
+                - /url: /services/ai-automation
+            - listitem [ref=e224]:
+              - link "Website Builders" [ref=e225] [cursor=pointer]:
+                - /url: /services/website-builders
+            - listitem [ref=e226]:
+              - link "Chatbots" [ref=e227] [cursor=pointer]:
+                - /url: /services/chatbots
+        - generic [ref=e228]:
+          - heading "Company" [level=3] [ref=e229]
+          - list [ref=e230]:
+            - listitem [ref=e231]:
+              - link "Home" [ref=e232] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e233]:
+              - link "Book a Call" [ref=e234] [cursor=pointer]:
+                - /url: https://calendly.com/vad-optimalis/optimalis-ai-calendar
+                - text: Book a Call
+                - img [ref=e235]
+        - generic [ref=e239]:
+          - heading "Contact" [level=3] [ref=e240]
+          - list [ref=e241]:
+            - listitem [ref=e242]:
+              - link "hello@optimalis-ai.com" [ref=e243] [cursor=pointer]:
+                - /url: mailto:hello@optimalis-ai.com
+                - img [ref=e244]
+                - text: hello@optimalis-ai.com
+            - listitem [ref=e247]:
+              - generic [ref=e248]:
+                - img [ref=e249]
+                - text: Norwich, UK
+      - generic [ref=e252]:
+        - paragraph [ref=e253]: © 2026 Optimalis AI · Built in Norwich, UK
+        - paragraph [ref=e254]: AI that works while you sleep.
+  - alert [ref=e255]
