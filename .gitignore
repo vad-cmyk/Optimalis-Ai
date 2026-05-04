@@ -20,6 +20,33 @@
 .DS_Store
 *.pem
 
+# playwright temp files
+.playwright-mcp/
+*.playwright-mcp/
+
+# screenshots / temp images
+*.png
+*.jpg
+*.jpeg
+!public/**
+!src/app/icon.png
+!src/app/apple-icon.png
+
+# superpowers brainstorm cache
+.superpowers/
+
+# loose files in project root
+/ChatGPT*.png
+/optimalisai.mp4
+/hero-*.png
+/homepage-*.png
+/screenshot-*.png
+/sections-*.png
+/service-*.png
+
+# nested project folder (artefact from scaffolding)
+"Optimalis Ai 2/"
+
 # debug
 npm-debug.log*
 yarn-debug.log*
